@@ -14,7 +14,8 @@
 <style lang="scss" scoped>
     @import "../../assets/scss/variables";
     .container {
-        height: 90vh;
+        background-color: $second-color;
+        height: 95vh;
         width: 100%;
         display: flex;
         flex-direction: column;
