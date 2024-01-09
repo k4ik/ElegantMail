@@ -25,7 +25,7 @@
         gap: 20px;
 
         img {
-            width: 45%;
+            width: 100px;
         }
     }
 </style>

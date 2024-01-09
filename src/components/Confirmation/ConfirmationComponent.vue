@@ -15,7 +15,7 @@
     @import "../../assets/scss/variables";
     .container {
         background-color: $second-color;
-        height: 95vh;
+        height: 100vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -26,7 +26,7 @@
 
         p {
             color: $grey;
-            font-size: 30px;
+            font-size: 22px;
             text-align: center;
             margin-bottom: 20px;
         }
