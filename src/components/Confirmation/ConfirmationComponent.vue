@@ -29,6 +29,7 @@
             font-size: 22px;
             text-align: center;
             margin-bottom: 20px;
+            padding: 0 40px;
         }
     }
 </style>
