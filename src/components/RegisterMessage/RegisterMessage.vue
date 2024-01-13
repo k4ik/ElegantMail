@@ -67,6 +67,7 @@ main {
         p {
             font-size: 22px;
             color: $second-color;
+            text-align: center;
         }
 
         input {
