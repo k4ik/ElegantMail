@@ -3,14 +3,14 @@
         <form method="post" class="form" @submit.prevent="sendMail">
             <header class="header-form">
                 <label for="name" class="label-header">Você gostaria de se identificar?</label>
-                <input type="text" name="name" placeholder="Digite seu nome ou apelido" class="input-header">
+                <input v-model="name" type="text" name="name" placeholder="Digite seu nome ou apelido" class="input-header">
             </header>
 
             <div class="content-form">
                 <label for="email" class="label-form">Email</label>
-                <input type="email" name="email" placeholder="Digite o email dele ou dela" class="input-form">
+                <input v-model="email" type="email" name="email" placeholder="Digite o email dele ou dela" class="input-form">
                 <label for="message" class="label-form">Surpreenda</label>
-                <textarea name="message" class="input-form" placeholder="Solte o verbo para seu/sua amado(a)" rows="6"></textarea>
+                <textarea v-model="message" name="message" class="input-form" placeholder="Solte o verbo para seu/sua amado(a)" rows="6"></textarea>
                 <button type="submit" class="submit-button">ENVIAR CORREIO</button>
             </div>
         </form>
@@ -29,15 +29,15 @@
         methods: {
             sendMail() {
                 const formData = {
-                    nome: this.nome,
+                    name: this.name,
                     email: this.email,
-                    mensagem: this.mensagem
+                    message: this.message
                 };
 
-                fetch('../../backend/send_mail.php', {
+                fetch('https://send-mail-api-r62r.vercel.app/send_mail.php', {
                     method: 'POST',
                     headers: {
-                        'ContentType': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(formData)
                 })
@@ -55,6 +55,7 @@
         }
     }
 </script>
+
 
 <style lang="scss" scoped>
     @import '../assets/scss/variables';
