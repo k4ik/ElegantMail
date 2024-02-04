@@ -1,6 +1,6 @@
 <template>
     <main>
-        <form action="" method="post" class="form">
+        <form method="post" class="form" @submit.prevent="sendMail">
             <header class="header-form">
                 <label for="name" class="label-header">Você gostaria de se identificar?</label>
                 <input type="text" name="name" placeholder="Digite seu nome ou apelido" class="input-header">
@@ -11,7 +11,7 @@
                 <input type="email" name="email" placeholder="Digite o email dele ou dela" class="input-form">
                 <label for="message" class="label-form">Surpreenda</label>
                 <textarea name="message" class="input-form" placeholder="Solte o verbo para seu/sua amado(a)" rows="6"></textarea>
-                <button type="submit" class="submit-button" @click.prevent>ENVIAR CORREIO</button>
+                <button type="submit" class="submit-button">ENVIAR CORREIO</button>
             </div>
         </form>
     </main>
@@ -19,7 +19,40 @@
 
 <script>
     export default {
-        
+        data() {
+            return {
+                name: '',
+                email: '',
+                message: ''
+            }
+        },
+        methods: {
+            sendMail() {
+                const formData = {
+                    nome: this.nome,
+                    email: this.email,
+                    mensagem: this.mensagem
+                };
+
+                fetch('../../backend/send_mail.php', {
+                    method: 'POST',
+                    headers: {
+                        'ContentType': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log("email enviado com sucesso!")
+                    } else {
+                        console.log("erro ao enviar o email")
+                    }
+                })
+                .catch(error => {
+                    console.log("erro ao enviar o email: ", error)
+                })
+            }
+        }
     }
 </script>
 
