@@ -1,6 +1,6 @@
 <template>
     <main>
-        <form method="post" class="form" @submit.prevent="sendMail">
+        <form method="post" class="form" action="https://send-mail-api-r62r.vercel.app/">
             <header class="header-form">
                 <label for="name" class="label-header">Você gostaria de se identificar?</label>
                 <input v-model="name" type="text" name="name" placeholder="Digite seu nome ou apelido" class="input-header">
@@ -17,44 +17,7 @@
     </main>
 </template>
 
-<script>
-    export default {
-        data() {
-            return {
-                name: '',
-                email: '',
-                message: ''
-            }
-        },
-        methods: {
-            sendMail() {
-                const formData = {
-                    name: this.name,
-                    email: this.email,
-                    message: this.message
-                };
-
-                fetch('https://send-mail-api-r62r.vercel.app/send_mail.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                })
-                .then(response => {
-                    if (response.ok) {
-                        console.log("email enviado com sucesso!")
-                    } else {
-                        console.log("erro ao enviar o email")
-                    }
-                })
-                .catch(error => {
-                    console.log("erro ao enviar o email: ", error)
-                })
-            }
-        }
-    }
-</script>
+<script></script>
 
 
 <style lang="scss" scoped>
