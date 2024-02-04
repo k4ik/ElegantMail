@@ -1,6 +1,6 @@
 <template>
     <main>
-        <form method="post" class="form" action="https://send-mail-api-r62r.vercel.app/send_mail.php">
+        <form method="post" class="form" action="https://send-mail-api-r62r.vercel.app/">
             <header class="header-form">
                 <label for="name" class="label-header">Você gostaria de se identificar?</label>
                 <input v-model="name" type="text" name="name" placeholder="Digite seu nome ou apelido" class="input-header">
