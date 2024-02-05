@@ -1,18 +1,12 @@
 <template>
-  <Register />
+  <div>
+    <RouterView />
+  </div>
 </template>
 
-<script>
-  import Register from './components/Register.vue'
+<script></script>
 
-  export default {
-    components: {
-      Register
-    }
-  }
-</script>
-
-<style lang="scss">
+<style>
   * {
     margin: 0;
     padding: 0;
