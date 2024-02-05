@@ -1,17 +1,9 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import RegisterView from './views/RegisterView.vue'
-import SuccessView from './views/SuccessView.vue'
+import router from './router'
 
-const routes = [
-  { path: '/', component: RegisterView },
-  { path: '/success', component: SuccessView },
-]
+const app = createApp(App)
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-})
+app.use(router)
 
-createApp(App).use(router).mount('#app')
+app.mount('#app')
