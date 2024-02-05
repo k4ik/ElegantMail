@@ -4,7 +4,9 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+  import { RouterView } from 'vue-router'
+</script>
 
 <style>
   * {
