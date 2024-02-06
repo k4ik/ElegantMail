@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/success',
       name: 'success',
       component: () => import('../views/SuccessView.vue')
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: () => import('../views/ErrorView.vue')
     }
   ]
 })
