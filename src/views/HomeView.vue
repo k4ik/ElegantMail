@@ -24,8 +24,6 @@
     @import '../assets/scss/variables';
 
     form {
-
-        
         width: 100%;
 
         .header-form, .content-form {
@@ -52,7 +50,7 @@
 
             .label-header {
                 color: $branco;
-                font-size: 26px;
+                font-size: 1.35em;
                 font-weight: bold;
 
                 @media screen and (max-width: 365px) {
@@ -109,9 +107,9 @@
                 border: none;
                 border-radius: 12px;
                 font-weight: bold;
+                transition: .2s all ease-in-out;
 
                 &:hover {
-                    transition: .3s;
                     background-color: $rosa-claro;
                 }
 
