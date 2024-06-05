@@ -1,4 +1,5 @@
 <template>
+    <BackButton />
     <div class="container">
         <p class="title">Ocorreu um erro ao enviar seu correio</p>
         <div class="container-image">
@@ -8,9 +9,13 @@
 </template>
 
 <script>
-    export default {
-        
+import BackButton from "../components/BackButton.vue";
+
+export default {
+    components: {
+        BackButton
     }
+}
 </script>
 
 <style lang="scss" scoped>
